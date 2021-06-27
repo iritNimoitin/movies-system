@@ -1,0 +1,15 @@
+<html>
+
+<body>
+    <h1>Update User Page</h1>
+    <form action="/update/<%= user.username %>" method="POST">
+        username: <input type="text" name="username" value=<%=user.username %>></br> </br>
+        password: <input type="password" name="password" value=<%=user.password %>></br></br>
+        create Date: <input type="date" name="date" value=<%=user.date %>></br></br>
+        Number Of Transactions: <input type="number" name="transactions" value=<%=user.transactions %>></br></br>
+        <input type="submit" value="Update">
+    </form>
+
+</body>
+
+</html>

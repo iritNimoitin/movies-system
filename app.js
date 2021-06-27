@@ -14,6 +14,8 @@ var searchMovieController = require('./routes/searchMovie');
 var movieDataPageController = require('./routes/movieDataPage');
 var userManagementController = require('./routes/usersManagementPage');
 var addUSerController = require('./routes/addUser');
+var deleteController = require('./routes/delete');
+var updateController = require('./routes/update');
 var app = express();
 app.use(session({
   secret: 'My Secret',
@@ -42,6 +44,10 @@ app.use('/searchMovie', searchMovieController);
 app.use('/movieDataPage', movieDataPageController);
 app.use('/usersManagementPage', userManagementController);
 app.use('/userDataPage', addUSerController);
+app.use('/delete', deleteController);
+app.use('/update', updateController);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

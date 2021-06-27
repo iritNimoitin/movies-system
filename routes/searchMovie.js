@@ -18,8 +18,9 @@ router.post('/', async function (req, res, next) {
     if (req.session.authenticated) {
         if (!req.session.admin) {
             req.session.dailyActions++;
-            if (req.session.dailyActions > req.session.maxDailyActions) {
+            if (req.session.dailyActions >= req.session.maxDailyActions) {
                 req.session.authenticated = false;
+                res.redirect('login');
             }
         }
     } else {
@@ -39,7 +40,6 @@ router.post('/', async function (req, res, next) {
         moviesResult = moviesResult.filter(movie => movie.genres.includes(req.body.genres));
     }
     let moviesGenre = moviesResult.map(movie => allMovies.filter(m => movie.genres.every(g => m.genres?.includes(g)) && m.id !== movie.id));
-    //moviesResult = moviesResult.map(movie => movie.name);
     res.render('movieDataPage', { moviesResult: moviesResult, moviesGenre: moviesGenre });
 });
 

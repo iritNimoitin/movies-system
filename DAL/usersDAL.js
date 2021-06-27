@@ -15,7 +15,7 @@ const getUsers = function () {
     })
 }
 
-const addUser = function (obj) {
+const writeFile = function (obj) {
 
     return new Promise((resolve, reject) => {
         jfile.writeFile(usersPath, obj, (err) => {
@@ -31,4 +31,4 @@ const addUser = function (obj) {
 }
 
 
-module.exports = { getUsers, addUser };
+module.exports = { getUsers, writeFile };
