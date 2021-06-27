@@ -1,0 +1,26 @@
+<html>
+
+<body>
+    <h1>Add New Movie</h1>
+    <form action="/createMovie/newMovie" method="POST">
+        Name : <input type="text" name="name"> <br /></br>
+        Language : <input type="text" name="language"> <br /></br>
+        genres : <br />
+        <ul>
+            <li>
+                Drama <input type="checkbox" name="genres" value="Drama"><br>
+            </li>
+            <li>
+                Comedy <input type="checkbox" name="genres" value="Comedy"><br>
+            </li>
+            <li>
+                Family <input type="checkbox" name="genres" value="Family">
+            </li>
+        </ul>
+
+        <input type="submit" value="Save">
+    </form>
+
+</body>
+
+</html>

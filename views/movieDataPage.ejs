@@ -1,0 +1,29 @@
+<html>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Search Result</th>
+            <th>Movies With Same Genre</th>
+        </tr>
+        <% moviesResult.forEach(function(movie, index) { %>
+            <tr>
+                <td>
+                    <a href="/movieDataPage/<%= movie.id%>">
+                        <%= movie.name %>
+                    </a> <br />
+                </td>
+                <td>
+                    <% moviesGenre[index].forEach(function(movie) { %>
+                        <a href="/movieDataPage/<%= movie.id%>">
+                            <%= movie.name %>
+                        </a> </br>
+                        <%}) %>
+                </td>
+            </tr>
+            <% })%>
+    </table>
+    <a href="/menu"> back </a>
+</body>
+
+</html>

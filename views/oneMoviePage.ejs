@@ -1,0 +1,19 @@
+<html>
+
+<body>
+    <h1>Movies Data Page </h1>
+
+    Id: <%= movie.id %> <br />
+        Name: <%= movie.name %> <br />
+            Genres: <% movie.genres.forEach(genre=> {%>
+                <%= genre%>
+                    </br>
+                    <% }) %> </br>
+                        Language: <%= movie.language %> <br /> <br />
+                            </br> <img src=<%=movie.image ? movie.image.medium : "" %> />
+                            <br /> <br />
+
+                            <a href="#" onclick="window.history.back()">Back to Movies Page</a>
+</body>
+
+</html>
